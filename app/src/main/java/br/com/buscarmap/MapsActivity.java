@@ -66,7 +66,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         double longi = Double.parseDouble(br.com.buscarmap.Buscar.lg.getText().toString());
 
         LatLng Minha_Posição = new LatLng(lati, longi);
-        mMap.addMarker(new MarkerOptions().position(Minha_Posição).title("Minha Posição " + lati + " " + longi).icon(BitmapDescriptorFactory.fromResource(R.drawable.marcardor)));
+        mMap.addMarker(new MarkerOptions().position(Minha_Posição).title("Minha Posição " + lati + " " + longi).icon(BitmapDescriptorFactory.fromResource(R.drawable.marcardor)).snippet("Local escolhido"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Minha_Posição, 15));
 
         CircleOptions circleOptions = new CircleOptions();
@@ -75,7 +75,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         circleOptions.strokeWidth(10);
         circleOptions.strokeColor(Color.argb(90, 255, 0, 0));
 
-        circleOptions.radius(350.00);
+        circleOptions.radius(10000.00);
 
         mMap.addCircle(circleOptions);
     }
